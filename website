@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Service Booking</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://your-image-host.com/your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            width: 100%;
+        }
+        h1 {
+            font-weight: 600;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            text-align: left;
+            margin-top: 10px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+        }
+        input, select {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        button {
+            background: #ff9800;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e68900;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book a Cleaning Service</h1>
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+        
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" placeholder="Enter your email">
+        
+        <label for="service">Select a Service:</label>
+        <select id="service">
+            <option value="">Select a Service</option>
+            <option value="standard">Standard Cleaning</option>
+            <option value="deep">Deep Cleaning</option>
+            <option value="moveout">Move-Out Cleaning</option>
+        </select>
+        
+        <label for="date">Select a Date:</label>
+        <input type="date" id="date">
+        
+        <button onclick="confirmBooking()">Confirm Booking</button>
+    </div>
+
+    <script>
+        function confirmBooking() {
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let service = document.getElementById('service').value;
+            let date = document.getElementById('date').value;
+
+            if (!name || !email || !service || !date) {
+                alert("Please fill in all fields.");
+                return;
+            }
+            
+            alert(`Booking confirmed for ${name} on ${date} for ${service} service.`);
+        }
+    </script>
+</body>
+</html>
